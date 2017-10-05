@@ -69,7 +69,7 @@ class EmployeesController extends Controller
             ->paginate(20);
 
         foreach ($employees as &$employee) {
-            $employee->photo = $employee->photo ? Storage::url($employee->photo) : Storage::url('public/img/no_image.png');
+            $employee->photo = $employee->photo ? Storage::url($employee->photo) : 'public/icons/no_image.png';
         }
 
         if ($request->ajax()) {
@@ -123,7 +123,7 @@ class EmployeesController extends Controller
             'position_id.regex' => 'The position field is required.'
         ]);
 
-        $path = 'img/no_image.png';
+        $path = '';
         if ($request->hasFile('file') && $request->file('file')->isValid()) {
             $path = Storage::putFile('public/img', $request->file('file'));
         }
@@ -150,7 +150,7 @@ class EmployeesController extends Controller
                 ->get();
         }
 
-        $employee->photo = $employee->photo ? Storage::url($employee->photo) : Storage::url('public/img/no_image.png');
+        $employee->photo = $employee->photo ? Storage::url($employee->photo) : 'public/img/no_image.png';
 
         return view('edit_employee', compact('employee', 'positions', 'bosses'));
     }
@@ -179,7 +179,7 @@ class EmployeesController extends Controller
                 'position_id.regex' => 'The position field is required.'
             ]);
 
-        $path = 'img/no_image.png';
+        $path = '';
         if ($request->hasFile('file') && $request->file('file')->isValid()) {
             $path = Storage::putFile('public/img', $request->file('file'));
         }
