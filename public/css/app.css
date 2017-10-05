@@ -1,0 +1,62 @@
+body {
+    padding-top: 6rem;
+}
+
+ul.tree {
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+ul.tree ul {
+    padding-left: 24px;
+}
+
+ul.tree li {
+    padding: 0;
+    list-style: none;
+}
+
+ul.tree li .wrapper {
+    padding: 0px 10px;
+    display: table;
+    width: 100%;
+}
+
+ul.tree li .expander {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 24px;
+}
+
+ul.tree li .expander i {
+    cursor: pointer;
+}
+
+ul.tree li .display {
+    padding: 8px 0px 8px 4px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.hidden {
+    display: none;
+}
+
+ul.pagination {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+ul.pagination li {
+    display: inline-block;
+    margin: 0 5px;
+}
+table th span.sort {
+    cursor: pointer;
+}
+
+table th span.sort i{
+    vertical-align: middle;
+}
