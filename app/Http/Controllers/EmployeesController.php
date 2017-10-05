@@ -69,7 +69,7 @@ class EmployeesController extends Controller
             ->paginate(20);
 
         foreach ($employees as &$employee) {
-            $employee->photo = $employee->photo ? Storage::url($employee->photo) : 'public/icons/no_image.png';
+            $employee->photo = $employee->photo ? Storage::url($employee->photo) : '/icons/no_image.png';
         }
 
         if ($request->ajax()) {
@@ -150,7 +150,7 @@ class EmployeesController extends Controller
                 ->get();
         }
 
-        $employee->photo = $employee->photo ? Storage::url($employee->photo) : 'public/img/no_image.png';
+        $employee->photo = $employee->photo ? Storage::url($employee->photo) : '/icons/no_image.png';
 
         return view('edit_employee', compact('employee', 'positions', 'bosses'));
     }

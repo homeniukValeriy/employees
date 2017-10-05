@@ -13,7 +13,7 @@
 
 Route::get('/', 'EmployeesController@index');
 
-Route::get('/employees/{employee}/subtree', 'EmployeesController@subtree')->middleware('auth');
+Route::get('/employees/{employee}/subtree', 'EmployeesController@subtree');
 
 Route::get('/employees/get-bosses', 'EmployeesController@getBosses')->middleware('auth');
 
